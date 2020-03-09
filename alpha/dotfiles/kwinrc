@@ -18,12 +18,15 @@ videowallEnabled=false
 
 [Script-kwin-script-tiling]
 floaters=\\0
-fullscreenGaps=false
+fullscreenGaps=true
 noBorder=true
-removeEmptyDesktops=true
+removeEmptyDesktops=false
 screenGapSizeBottom=20
 screenGapSizeLeft=20
 screenGapSizeRight=20
 screenGapSizeTop=20
 windowsGapSizeHeight=10
 windowsGapSizeWidth=10
+
+[ModifierOnlyShortcuts]
+Meta=

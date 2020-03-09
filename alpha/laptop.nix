@@ -1,22 +1,24 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   # START --- boot
-  boot.kernelParams = [ "intel_pstate=no_hwp" ];
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enableCryptodisk = true;
+  boot.loader.grub.extraInitrd = "/boot/initrd.keys.gz";
   boot.loader.timeout = 0;
-
-  boot.loader.grub.gfxmodeEfi = "1024x768";
 
   boot.initrd.luks.devices = [
     {
       name = "root";
-      device = "/dev/disk/by-id/root";
+      device = "/dev/disk/by-uuid/2387d60a-ef56-423c-bd80-e277b1b660c7";
       preLVM = true;
+      keyFile = "/keyfile.bin";
       allowDiscards = true;
     }
   ];
@@ -25,13 +27,6 @@
   # END --- boot
 
   # START --- kaby-lake cpu
-  boot.kernelParams = [
-    "i915.enable_fbc=1"
-    "i915.enable_psr=2"
-  ] ++ boot.kernelParams;
-
-  boot.initrd.kernelModules = [ "i915" ];
-
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableAllFirmware = true;
   
@@ -59,17 +54,12 @@
   powerManagement.cpuFreqGovernor = null;
 
   # Force S3 sleep mode. See README.wiki for details.
-  boot.kernelParams = [ "mem_sleep_default=deep" ] ++ boot.kernelParams;
-
-  # touchpad goes over i2c
-  boot.blacklistedKernelModules = [ "psmouse" ];
+  # boot.kernelParams = [ "mem_sleep_default=deep" ];
 
   services.throttled.enable = true;
 
-  # This will save you money and possibly your life!
   services.thermald.enable = true;
 
-  boot.kernelModules = [ "acpi_call" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
   # END --- laptop
 

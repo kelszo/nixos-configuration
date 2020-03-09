@@ -10,8 +10,8 @@
           # userChrome
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           
+          "browser.startup.blankWindow" = true;
           "browser.startup.homepage" = "about:blank";
-          "browser.urlbar.placeholderName" = "DuckDuckGo";
           "signon.rememberSignons" = false;
 
           # performance      
@@ -224,7 +224,7 @@
             https-everywhere
             privacy-possum            
             ublock-origin
-          ] ++ builtins.attrValues (import ./addons.nix { 
+          ] ++ builtins.attrValues (import ./extensions.nix { 
               inherit (pkgs) stdenv fetchurl;
               buildFirefoxXpiAddon = pkgs.nur.repos.rycee.firefox-addons.buildFirefoxXpiAddon;
             });

@@ -1,0 +1,19 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar
+
+[General]
+BrowserApplication[$e]=firefox.desktop
+TerminalApplication[$e]=kitty
+XftHintStyle=
+dbfile=/home/alpha/.mozilla/firefox/safefox/places.sqlite
+fixed=Monospace,10,-1,5,50,0,0,0,0,0
+font=Sans Serif,10,-1,5,50,0,0,0,0,0
+menuFont=Sans Serif,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=Sans Serif,8,-1,5,50,0,0,0,0,0
+toolBarFont=Sans Serif,10,-1,5,50,0,0,0,0,0
+
+[KDE]
+SingleClick=false
+
+[WM]
+activeFont=Noto Sans,12,-1,5,50,0,0,0,0,0,Bold

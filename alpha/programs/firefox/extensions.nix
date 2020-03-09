@@ -54,4 +54,13 @@
     sha256 = "0xms92kbwfgyrjkq6jqa08wivbyxs2vsprnagdqv4dp1pf0i416r";
     meta = with stdenv.lib;{};
   };
+
+  "plasma-integration" = buildFirefoxXpiAddon {
+    pname = "plasma-integration";
+    version = "1.7";
+    addonId = "plasma-browser-integration@kde.org";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3455928/plasma_integration-1.7-fx.xpi?src=";
+    sha256 = "1jbd0v5hg0y17xrs2mbi9kr19m59h397rnhljz2f67irniajlh9f";
+    meta = with stdenv.lib;{};
+  };
 }

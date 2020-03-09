@@ -21,6 +21,7 @@
     libcap
     nethogs
     nix-index
+    ntfs3g
     ping
     sudo
     tree

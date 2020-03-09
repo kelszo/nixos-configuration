@@ -16,7 +16,7 @@
 
   imports =
     [ 
-      ./programs/vscodium.nix
+      ./programs/vscodium
       ./programs/firefox
     ];
   
@@ -38,9 +38,14 @@
     userName = "Kelvin Szolnoky";
   };
 
-  programs.rofi = {
-    enable = true;
-  };
+  # START --- kde dotfiles
+  home.file.".config/kwinrc".source = dotfiles/kwinrc;
+  home.file.".config/kdeglobals".source = dotfiles/kdeglobals;
+  home.file.".config/khotkeysrc".source = dotfiles/khotkeysrc;
+  home.file.".config/kglobalshortcutsrc".source = dotfiles/kglobalshortcutsrc;
+  # END --- kde dotfiles
+
+  home.file.".config/kitty/kitty.conf".source = dotfiles/kitty;
 
   home.packages = with pkgs; [
     spaceship-prompt # oh-my-zsh theme
@@ -50,10 +55,9 @@
     spotify
     xournalpp
     nomacs
-    feh
     kdeApplications.okular
     spotify
-    darktable
+    # darktable
 
     bitwarden # password manager
     libreoffice # office suite
@@ -72,6 +76,7 @@
     hunspellDicts.sv-se
 
     # dev
+    kitty # terminal
     ## golang
     go
 
@@ -81,39 +86,9 @@
     nodePackages.npm-check-updates
 
     # kde packages
-    # Password manager for KDE
-    kdeFrameworks.kwallet
-    kdeApplications.kwalletmanager
-    kwalletcli
-
-    # Allow automatic unlocking of kwallet if the same password. This seems to
-    # work without installing kwallet-pam.
-    kwallet-pam
-
-    # ssh-add prompts a user for a passphrase using KDE. Not sure if it is used
-    # by anything? ssh-add just asks passphrase on the console.
-    ksshaskpass
-
-    # GPG manager for KDE
-    kgpg
-    # This is needed for graphical dialogs used to enter GPG passphrases
-    # pinentry-qt
-
-    kdeplasma-addons
-
-    # Screenshots
-    kdeApplications.spectacle
-
-    # Torrenting
-    ktorrent
-
-    # KDE apps
-    kdeFrameworks.kconfig
-    kdeFrameworks.kconfigwidgets
-    dolphin
-    kdeApplications.dolphin-plugins
-
-    # tiling
-    unstable.kwin-tiling
-  ];
+    unstable.kwin-tiling # tiling
+    plasma-browser-integration
+  ] ++ builtins.filter stdenv.lib.isDerivation (builtins.attrValues kdeApplications)
+    ++ builtins.filter stdenv.lib.isDerivation (builtins.attrValues plasma5)
+    ++ builtins.filter stdenv.lib.isDerivation (builtins.attrValues kdeFrameworks);
 }
