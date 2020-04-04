@@ -1,0 +1,19 @@
+[
+  { "slug": "ublock-origin" },
+  { "slug": "privacy-possum" },
+  { "slug": "decentraleyes" },
+  { "slug": "google-container" },
+  { "slug": "double_click_new_tab" },
+  { "slug": "tab-session-manager" },
+  { "slug": "tree-style-tab" },
+  { "slug": "user-agent-string-switcher" },
+  { "slug": "canvasblocker" },
+  { "slug": "görans-hemmasnickrade-ordli" },
+  { "slug": "bitwarden-password-manager" },
+  { "slug": "cookie-autodelete" },
+  { "slug": "disconnect" },
+  { "slug": "facebook-container" },
+  { "slug": "https-everywhere" },
+  { "slug": "image-expander-4chan" },
+  { "slug": "4chan-faster-images" }
+]

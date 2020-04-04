@@ -1,9 +1,8 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   imports = [
     (import (builtins.fetchTarball {
-    url = "https://github.com/rycee/home-manager/archive/release-19.09.tar.gz";
+      url =
+        "https://github.com/rycee/home-manager/archive/release-19.09.tar.gz";
     }) { inherit pkgs; }).nixos
   ];
   security.sudo.enable = true;
@@ -14,7 +13,8 @@
     isNormalUser = true;
     home = "/home/alpha";
     description = "alpha";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups =
+      [ "wheel" "networkmanager" "docker" "sound" "video" "pulse" "audio" ];
   };
 
   home-manager.users.alpha = import ./home.nix;

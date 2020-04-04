@@ -1,0 +1,93 @@
+@namespace url('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul');
+
+#main-window[tabsintitlebar='true']:not([extradragspace='true']) #TabsToolbar > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar='true']) #TabsToolbar {
+  visibility: collapse !important;
+}
+
+#sidebar-header {
+  display: none;
+}
+
+#TabsToolbar {
+  visibility: collapse !important;
+}
+
+/* colours */
+:root {
+  /* special */
+  --foreground: #707070;
+  --background: #ffffff;
+  --cursorColor: #707070;
+  /* black */
+  --color0: #d3d3d3;
+  --color8: #b3b3b3;
+  /* red */
+  --color1: #ef6b7b;
+  --color9: #ed5466;
+  /* green */
+  --color2: #a1d569;
+  --color10: #afdb80;
+  /* yellow */
+  --color3: #f59335;
+  --color11: #f59335;
+  /* blue */
+  --color4: #4ec2e8;
+  --color12: #5dc7ea;
+  /* magenta */
+  --color5: #fec7cd;
+  --color13: #d2a4b4;
+  /* cyan */
+  --color6: #95c1c0;
+  --color14: #75a1a0;
+  /* white */
+  --color7: #707070;
+  --color15: #464646;
+}
+
+/* Bookmarks Toolbar: no icons */
+#personal-bookmarks .toolbarbutton-icon {
+  display: none !important;
+}
+
+/* remove suggested results url bar */
+#PopupAutoCompleteRichResult {
+  display: none !important;
+}
+
+#reader-mode-button {
+  display: none !important;
+}
+
+/* Bookmarks Toolbar: no icons */
+#personal-bookmarks .toolbarbutton-icon {
+  display: none !important;
+}
+
+/* Remove back/forward buttons */
+#back-button,
+#forward-button {
+  display: none !important;
+}
+
+/* Remove close tab button */
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button {
+  display: none !important;
+}
+
+/* Remove new tab button */
+#tabbrowser-tabs .tabs-newtab-button {
+  display: none !important;
+}
+
+.urlbar-history-dropmarker,
+.urlbar-go-button {
+  display: none !important;
+}
+
+.tab-line[selected='true'] {
+  display: none !important;
+}

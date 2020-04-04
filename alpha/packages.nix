@@ -1,12 +1,21 @@
 { pkgs, ... }:
-{
+with pkgs;
+let
+  my-python-packages = python-packages:
+    with python-packages; [
+      dbus
+      dbus-python
+      distro
+    ];
+  python-with-my-packages = python3.withPackages my-python-packages;
+in {
 
   environment.systemPackages = with pkgs; [
     # Basic command line tools
     acpi
     bash
     binutils
-    cmake 
+    cmake
     coreutils
     curl
     dnsutils
@@ -17,19 +26,28 @@
     gnumake
     hdf5
     htop
+    imagemagick
     killall
     libcap
+    libheif
     nethogs
     nix-index
     ntfs3g
+    patchelf
     ping
+    qt5.full
     sudo
     tree
     unzip
     vbetool
     wget
     which
+    wine
+    wireguard
     zip
+
+    # python
+    python-with-my-packages
   ];
 
   fonts.fonts = with pkgs; [

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # Use Plasma 5
   services.xserver.enable = true;
   services.xserver.layout = "se";

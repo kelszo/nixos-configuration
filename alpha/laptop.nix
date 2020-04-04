@@ -1,6 +1,4 @@
-{ pkgs, config, ... }:
-
-{
+{ pkgs, config, ... }: {
   # START --- boot
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -13,15 +11,13 @@
   boot.loader.grub.extraInitrd = "/boot/initrd.keys.gz";
   boot.loader.timeout = 0;
 
-  boot.initrd.luks.devices = [
-    {
-      name = "root";
-      device = "/dev/disk/by-uuid/2387d60a-ef56-423c-bd80-e277b1b660c7";
-      preLVM = true;
-      keyFile = "/keyfile.bin";
-      allowDiscards = true;
-    }
-  ];
+  boot.initrd.luks.devices = [{
+    name = "root";
+    device = "/dev/disk/by-uuid/2387d60a-ef56-423c-bd80-e277b1b660c7";
+    preLVM = true;
+    keyFile = "/keyfile.bin";
+    allowDiscards = true;
+  }];
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
   # END --- boot
@@ -29,7 +25,7 @@
   # START --- kaby-lake cpu
   hardware.cpu.intel.updateMicrocode = true;
   hardware.enableAllFirmware = true;
-  
+
   hardware.opengl.extraPackages = with pkgs; [
     vaapiIntel
     vaapiVdpau
@@ -64,9 +60,7 @@
   # END --- laptop
 
   # START --- ssd
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 1;
-  };
+  boot.kernel.sysctl = { "vm.swappiness" = 1; };
 
   services.fstrim.enable = true;
   # END --- ssd
