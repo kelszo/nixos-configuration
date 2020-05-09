@@ -1,0 +1,16 @@
+theme:
+  active: Cyan
+  banner: Black
+  error_border: Red
+  error_text: Red
+  hint: Yellow
+  hovered: '150, 150, 150'
+  inactive: Black
+  playbar_background: Black
+  playbar_progress: White
+  playbar_text: Black
+  selected: '100, 100, 100'
+  text: Black
+
+behavior:
+  tick_rate_milliseconds: 100

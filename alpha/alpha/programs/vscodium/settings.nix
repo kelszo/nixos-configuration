@@ -73,4 +73,5 @@
   ];
 
   "[latex]" = { "editor.wordWrap" = "on"; };
+  "[markdown]" = { "editor.defaultFormatter" = "yzhang.markdown-all-in-one"; };
 }

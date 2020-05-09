@@ -101,11 +101,11 @@
   };
   "facebook-container" = buildFirefoxXpiAddon {
     pname = "facebook-container";
-    version = "2.1.0";
+    version = "2.1.1";
     addonId = "@contain-facebook";
     url =
-      "https://addons.mozilla.org/firefox/downloads/file/3519841/facebook_container-2.1.0-fx.xpi?src=";
-    sha256 = "01f50f3e54e5120361b88feb549263b552946231d30d84ecb686d14676074235";
+      "https://addons.mozilla.org/firefox/downloads/file/3548655/facebook_container-2.1.1-fx.xpi?src=";
+    sha256 = "b8cca6d366bf1aa601cd8f0e4e6c51443e067e32c62900293aebea58ff11825d";
     meta = with stdenv.lib; {
       homepage = "https://github.com/mozilla/contain-facebook";
       description =
@@ -190,14 +190,15 @@
   };
   "tab-session-manager" = buildFirefoxXpiAddon {
     pname = "tab-session-manager";
-    version = "5.2.0";
+    version = "6.0.0";
     addonId = "Tab-Session-Manager@sienori";
     url =
-      "https://addons.mozilla.org/firefox/downloads/file/3477828/tab_session_manager-5.2.0-fx.xpi?src=";
-    sha256 = "d8dcf2f0bc0f76fd4c7e10672259622e9689e4af4b39808de9d466f276fb6683";
+      "https://addons.mozilla.org/firefox/downloads/file/3542590/tab_session_manager-6.0.0-fx.xpi?src=";
+    sha256 = "988fb774da67858e4306a42587347265b6d01caa2ae116b85314a1d81856d0a7";
     meta = with stdenv.lib; {
+      homepage = "https://tab-session-manager.sienori.com/";
       description =
-        "Save and restore the state of windows and tabs. It also supports automatic saving.";
+        "Save and restore the state of windows and tabs. It also supports automatic saving and cloud sync.";
       license = licenses.mpl20;
       platforms = platforms.all;
     };
@@ -217,11 +218,11 @@
   };
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.25.2";
+    version = "1.26.0";
     addonId = "uBlock0@raymondhill.net";
     url =
-      "https://addons.mozilla.org/firefox/downloads/file/3521827/ublock_origin-1.25.2-an+fx.xpi?src=";
-    sha256 = "997aac00064665641298047534c9392492ef09f0cbf177b6a30d4fa288081579";
+      "https://addons.mozilla.org/firefox/downloads/file/3541312/ublock_origin-1.26.0-an+fx.xpi?src=";
+    sha256 = "77dc9b59c953a6040e871e72be969e19ecdec841cc851295c21d1c0e755c8620";
     meta = with stdenv.lib; {
       homepage = "https://github.com/gorhill/uBlock#ublock-origin";
       description = "Finally, an efficient blocker. Easy on CPU and memory.";

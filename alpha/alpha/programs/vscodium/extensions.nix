@@ -13,13 +13,6 @@
     sha256 = "0zd0n9f5z1f0ckzfjr38xw2zzmcxg1gjrava7yahg5cvdcw6l35b";
   };
 
-  "project-manager" = {
-    name = "project-manager";
-    publisher = "alefragnani";
-    version = "10.11.0";
-    sha256 = "01gyggbk7h3h0pyydbx69xwhqac508xq7jrfqic34nl0jy36clda";
-  };
-
   "npm-intellisense" = {
     name = "npm-intellisense";
     publisher = "christian-kohler";
@@ -46,13 +39,6 @@
     publisher = "dbaeumer";
     version = "2.1.1";
     sha256 = "11ybn0hrarp1v06zjql9lcbvr70ryhij8v2v23q45gm0qgmpk5ib";
-  };
-
-  "vscode-npm-script" = {
-    name = "vscode-npm-script";
-    publisher = "eg2";
-    version = "0.3.11";
-    sha256 = "0mzb6x0ccqbibpmaqw4axgz2ihfxmj3cm0v21sa06a2rszm90v2d";
   };
 
   "prettier-vscode" = {
@@ -111,39 +97,11 @@
     sha256 = "04zv2blnrsy87c4n4sj0yg1s90aad754b6vg02gii3jvqhl5060h";
   };
 
-  "vscode-docker" = {
-    name = "vscode-docker";
-    publisher = "ms-azuretools";
-    version = "1.0.0";
-    sha256 = "1zljdgym3kz4plb2a3z0yxvpqf4lnf215rajjs5sr7dxx3dwrxdg";
-  };
-
   "markdown-all-in-one" = {
     name = "markdown-all-in-one";
     publisher = "yzhang";
     version = "2.7.0";
     sha256 = "1hrxw4ilm2r48kd442j2i7ar43w463612bx569pdhz80mapr1z9k";
-  };
-
-  "code-runner" = {
-    name = "code-runner";
-    publisher = "formulahendry";
-    version = "0.9.17";
-    sha256 = "0xnnadk0c0y26pygs5ahkjpwz9yar7bn1gh0cnnyr35px95869zg";
-  };
-
-  "rust" = {
-    name = "rust";
-    publisher = "rust-lang";
-    version = "0.7.0";
-    sha256 = "16n787agjjfa68r6xv0lyqvx25nfwqw7bqbxf8x8mbb61qhbkws0";
-  };
-
-  "crates" = {
-    name = "crates";
-    publisher = "serayuzgur";
-    version = "0.4.7";
-    sha256 = "1r8ywmdiy7xxq27hkjglh29hvs0c2yz5g9x1laasp43sdi056spl";
   };
 
   "go" = {
@@ -153,19 +111,12 @@
     sha256 = "18x89g4b085crfm1wnfnsznwlvc30xqcivzf5nw9d1z5rg2dva5h";
   };
 
-  "vscode-proto3" = {
-    name = "vscode-proto3";
-    publisher = "zxh404";
-    version = "0.4.2";
-    sha256 = "05da62iahnnjxkgdav14c1gn90lkgyk9gc5rardsqijx2x6dgjn0";
-  };
-
-  "latex-workshop" = {
-    name = "latex-workshop";
-    publisher = "james-yu";
-    version = "8.8.0";
-    sha256 = "1nj12w0bxmqd18k2rqpxq7aibjhyzlw844zspghg5qmlwa44rzdm";
-  };
+  # "latex-workshop" = {
+  #   name = "latex-workshop";
+  #   publisher = "james-yu";
+  #   version = "8.8.0";
+  #   sha256 = "1nj12w0bxmqd18k2rqpxq7aibjhyzlw844zspghg5qmlwa44rzdm";
+  # };
 
   "nixfmt-vscode" = {
     name = "nixfmt-vscode";

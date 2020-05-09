@@ -1,4 +1,8 @@
 { ... }: {
+  "browser.cache.disk.enable" = false;
+  "browser.sessionstore.interval" = 3600000;
+  "browser.cache.disk_cache_ssl" = false;
+
   # userChrome
   "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
@@ -26,8 +30,6 @@
   "media.peerconnection.identity.timeout" = 1;
 
   "browser.aboutHomeSnippets.updateUrL" = "";
-  "browser.cache.disk.enable" = false;
-  "browser.cache.disk_cache_ssl" = false;
   "browser.cache.memory.enable" = false;
   "browser.cache.offline.enable" = false;
   "browser.formfill.enable" = false;
@@ -78,6 +80,7 @@
   "network.http.speculative-parallel-limit" = 0;
   "network.predictor.enabled" = false;
   "network.prefetch-next" = false;
+  "network.security.esni.enabled" = true;
   "network.websocket.enabled" = false;
 
   "places.history.enabled" = false;

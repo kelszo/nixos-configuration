@@ -1,5 +1,9 @@
 @namespace url('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul');
 
+#contentAreaContextMenu {
+  margin: 5px 0 0 5px;
+}
+
 #main-window[tabsintitlebar='true']:not([extradragspace='true']) #TabsToolbar > .toolbar-items {
   opacity: 0;
   pointer-events: none;

@@ -18,6 +18,8 @@
     "aesni_intel"
     "cryptd"
     "dm_crypt"
+    "snd-seq"
+    "snd-rawmidi"
   ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" "acpi_call" ];
