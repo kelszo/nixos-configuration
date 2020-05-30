@@ -74,4 +74,9 @@
 
   "[latex]" = { "editor.wordWrap" = "on"; };
   "[markdown]" = { "editor.defaultFormatter" = "yzhang.markdown-all-in-one"; };
+  "[yaml]" = {
+    "editor.insertSpaces" = true;
+    "editor.tabSize" = 2;
+    "editor.autoIndent" = true;
+  };
 }

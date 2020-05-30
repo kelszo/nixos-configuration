@@ -31,6 +31,9 @@
       unstable.spotify-tui
       spotify
       pinta # image editor
+      xournal # pdf-editor
+      unstable.standardnotes # note-taking
+      arandr # screens
 
       # screen recording/shotting
       #obs-studio 
@@ -42,6 +45,7 @@
       bitwarden # password manager
       libreoffice # office suite
       thunderbird # email client
+      unstable.protonmail-bridge
       anki # flashcards
       brave # backup browser
       chromium
@@ -49,11 +53,8 @@
       # messaging
       discord
       slack
-      unstable.gomuks
-      unstable.qtox
       unstable.riot-desktop
       unstable.signal-desktop
-      unstable.toxic
       unstable.zoom-us
 
       # Spelling
@@ -64,11 +65,13 @@
       # dev
       insomnia # http-request client
       docker-compose
-      kubectl
+      kubectl # kubernetes
+      kubernetes-helm
+      doctl # digital ocean
 
       # database
       robo3t # mongodb
-      unstable.dbeaver # sql manager
+      dbeaver # sql manager
       postgresql
 
       # golang

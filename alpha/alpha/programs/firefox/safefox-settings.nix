@@ -82,6 +82,7 @@
   "network.prefetch-next" = false;
   "network.security.esni.enabled" = true;
   "network.websocket.enabled" = false;
+  "network.trr.mode" = 3;
 
   "places.history.enabled" = false;
 

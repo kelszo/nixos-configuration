@@ -3,11 +3,10 @@
   networking.hostName = "alpha";
   networking.enableIPv6 = true;
   networking.nameservers = [
-    "95.216.212.177"
-    "84.200.69.80"
-    "84.200.70.40"
-    "208.67.222.222"
-    "208.67.222.220"
+    "2001:9b1:8826::53"
+    "2001:9b0:4:2601::53"
+    "98.128.186.86"
+    "155.4.89.136"
   ];
 
   services.connman = {

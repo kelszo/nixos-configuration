@@ -21,6 +21,9 @@
     };
   };
 
+  # fix git asking for password
+  programs.ssh.askPassword = "";
+
   users.users.alpha = {
     isNormalUser = true;
     home = "/home/alpha";
