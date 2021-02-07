@@ -4,6 +4,11 @@
     pulseaudio = true;
   };
 
+  nix.extraOptions = ''
+    binary-caches-parallel-connections = 3
+    connect-timeout = 5
+  '';
+
   imports = [
     ./hardware-configuration.nix
     ./xserver.nix

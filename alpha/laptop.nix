@@ -21,21 +21,32 @@
   };
 
   hardware.acpilight.enable = true;
-  programs.light.enable = true;
 
-  services.tlp.enable = true;
-  services.acpid.enable = true;
-  services.upower.enable = true;
-  services.dbus.enable = true;
-  powerManagement.enable = true;
-  #powerManagement.cpuFreqGovernor = "ondemand";
+  services = {
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      };
+    };
+    acpid.enable = true;
+    upower.enable = true;
+    dbus.enable = true;
+    throttled.enable = true;
+    thermald.enable = true;
+    fstrim.enable = true;
+  };
 
-  services.throttled.enable = lib.mkDefault true;
-  services.thermald.enable = true;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
 
-  boot.kernel.sysctl = { "vm.swappiness" = 1; };
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+    kernel.sysctl = { "vm.swappiness" = 1; };
+  };
 
-  services.fstrim.enable = true;
 }
