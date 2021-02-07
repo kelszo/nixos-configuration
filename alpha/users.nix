@@ -1,15 +1,22 @@
 { pkgs, ... }: {
   imports = [
-    (import (builtins.fetchTarball {
-      url =
-        "https://github.com/rycee/home-manager/archive/release-20.03.tar.gz";
-    }) { inherit pkgs; }).nixos
+    (
+      import (
+        builtins.fetchTarball {
+          url = "https://github.com/rycee/home-manager/archive/master.tar.gz";
+        }
+      ) { inherit pkgs; }
+    ).nixos
   ];
   security.sudo.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/libexec" "/share/zsh" ];
 
+  # fix git asking for password
+  programs.ssh.askPassword = "";
+
+  # User programs
   programs.zsh = {
     enable = true;
     autosuggestions.enable = true;
@@ -21,8 +28,45 @@
     };
   };
 
-  # fix git asking for password
-  programs.ssh.askPassword = "";
+  fonts = {
+    fontDir.enable = true;
+    enableDefaultFonts = true;
+    fonts = with pkgs;
+      let
+        san-francisco = callPackage ../packages/san-francisco.nix {};
+      in
+        [ san-francisco ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "SF Mono" ];
+        sansSerif = [ "SF Pro Text" ];
+      };
+    };
+  };
+
+  virtualisation = {
+    docker = {
+      enable = true;
+      autoPrune.enable = true;
+      # enableOnBoot = false;
+    };
+  };
+
+  services.usbmuxd.enable = true;
+
+  environment.gnome3.excludePackages = with pkgs.gnome3; [
+    # baobab
+    eog
+    gedit
+    gnome-font-viewer
+    # pkgs.gnome-connections
+    simple-scan
+    gnome-terminal
+  ];
+
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   users.users.alpha = {
     isNormalUser = true;

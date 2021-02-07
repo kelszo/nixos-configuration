@@ -1,248 +1,305 @@
-{ buildFirefoxXpiAddon, fetchurl, stdenv }: {
-  "4chan-faster-images" = buildFirefoxXpiAddon {
-    pname = "4chan-faster-images";
-    version = "1.3";
-    addonId = "{566e68fa-612c-492f-a2d8-a925cc672b56}";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/978937/4chan_faster_images-1.3-an+fx.xpi?src=";
-    sha256 = "b713e0628726bfadfaf3d63560d508b00ace7fdf48cf204d4100ddeb4f0fac46";
-    meta = with stdenv.lib; {
-      description = ''
-        Redirects alternate image servers (<a rel="nofollow" href="https://outgoing.prod.mozaws.net/v1/275f5796211162a3c1af8dc8d2e0bd3fbfea5e7bcc942202348567f8f4278cbb/http%3A//is.4chan.org">is.4chan.org</a>, <a rel="nofollow" href="https://outgoing.prod.mozaws.net/v1/e7a05b35679ce82a1b7e8531c81fbbaabfc9f74be528c18dab79dd3684e38398/http%3A//is2.4chan.org">is2.4chan.org</a>, <a rel="nofollow" href="https://outgoing.prod.mozaws.net/v1/2efb413ff0ae45afef1a161fedcba47ec49422892267cbf6a6c94a6129f7f3d4/http%3A//is3.4chan.org">is3.4chan.org</a>) requests to <a rel="nofollow" href="https://outgoing.prod.mozaws.net/v1/4fb4a85a9c17ddcf86a725aba3b261358ab35c83292e6aa466843bde8fd1d6d1/http%3A//i.4cdn.org">i.4cdn.org</a> on <a rel="nofollow" href="https://outgoing.prod.mozaws.net/v1/5bd5997ffc904f5dfc97f3f673fe09ba0638388c518d81501ac67ad456186a4d/http%3A//4chan.org">4chan.org</a>.'';
-      license = licenses.gpl2;
-      platforms = platforms.all;
-    };
+{ buildFirefoxXpiAddon, fetchurl, lib, stdenv }:
+{
+  "amiunique" = buildFirefoxXpiAddon {
+    pname = "amiunique";
+    version = "1.0.8";
+    addonId = "@amiunique-extension";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3702836/amiunique-1.0.8-fx.xpi";
+    sha256 = "d3f01ec47a75b6d382b1717929d7059fe7c198b9fb09f724b7ec4f9087d7de0b";
+    meta = with lib;
+      {
+        homepage = "https://amiunique.org";
+        description = "An extension to follow the evolution of your browser fingerprint! Be notified as soon as a change is detected!";
+        license = licenses.gpl3;
+        platforms = platforms.all;
+      };
   };
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "1.43.4";
+    version = "1.48.1";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3533484/bitwarden_free_password_manager-1.43.4-an+fx.xpi?src=";
-    sha256 = "1e1701fcb4f120cefecfcfd8302a75735809f7f7b0d4ef687625c3b3af5cdcd0";
-    meta = with stdenv.lib; {
-      homepage = "https://bitwarden.com";
-      description =
-        "A secure and free password manager for all of your devices.";
-      license = licenses.gpl3;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3714988/bitwarden_free_password_manager-1.48.1-an+fx.xpi";
+    sha256 = "27088233b72c36f8636ae88e79d7e52a0b4480d7fc73ed6412233a2f95408256";
+    meta = with lib;
+      {
+        homepage = "https://bitwarden.com";
+        description = "A secure and free password manager for all of your devices.";
+        license = licenses.gpl3;
+        platforms = platforms.all;
+      };
   };
   "canvasblocker" = buildFirefoxXpiAddon {
     pname = "canvasblocker";
-    version = "1.2";
+    version = "1.5";
     addonId = "CanvasBlocker@kkapsner.de";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3528876/canvasblocker-1.2-an+fx.xpi?src=";
-    sha256 = "8666579a1a005bf0f0588202422c38ab35b12ede2755de864df7a9f69f5e040a";
-    meta = with stdenv.lib; {
-      homepage = "https://github.com/kkapsner/CanvasBlocker/";
-      description = "Alters some JS APIs to prevent fingerprinting.";
-      license = licenses.mpl20;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3711139/canvasblocker-1.5-an+fx.xpi";
+    sha256 = "1ec7cfcf8567a2b70a8405980f0143316c560539688e9f43e8069f069bae5d51";
+    meta = with lib;
+      {
+        homepage = "https://github.com/kkapsner/CanvasBlocker/";
+        description = "Alters some JS APIs to prevent fingerprinting.";
+        license = licenses.mpl20;
+        platforms = platforms.all;
+      };
+  };
+  "clearurls" = buildFirefoxXpiAddon {
+    pname = "clearurls";
+    version = "1.20.0";
+    addonId = "{74145f27-f039-47ce-a470-a662b129930a}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3682334/clearurls-1.20.0-an+fx.xpi";
+    sha256 = "2d4bdd6c702999f2d76c97cbd6a0bb80cbdef4665c3c104b38824e9dc0616df2";
+    meta = with lib;
+      {
+        homepage = "https://clearurls.xyz/";
+        description = "Removes tracking elements from URLs";
+        license = licenses.lgpl3;
+        platforms = platforms.all;
+      };
   };
   "cookie-autodelete" = buildFirefoxXpiAddon {
     pname = "cookie-autodelete";
-    version = "3.1.1";
+    version = "3.6.0";
     addonId = "CookieAutoDelete@kennydo.com";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3530747/cookie_autodelete-3.1.1-an+fx.xpi?src=";
-    sha256 = "f13eac57fe7f0b3a443565b4d4dfcaf9d190277c6d21e6a28297fd87e2c52076";
-    meta = with stdenv.lib; {
-      homepage = "https://github.com/mrdokenny/Cookie-AutoDelete";
-      description =
-        "Control your cookies! This WebExtension is inspired by Self Destructing Cookies. When a tab closes, any cookies not being used are automatically deleted. Whitelist the ones you trust while deleting the rest. Support for Container Tabs.";
-      license = licenses.mit;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3711829/cookie_autodelete-3.6.0-an+fx.xpi";
+    sha256 = "f83646d42f476c86384164fd4868fa9c5b7452491f1f37d4e219c3fb3c421def";
+    meta = with lib;
+      {
+        homepage = "https://github.com/Cookie-AutoDelete/Cookie-AutoDelete";
+        description = "Control your cookies! This WebExtension is inspired by Self Destructing Cookies. When a tab closes, any cookies not being used are automatically deleted. Whitelist the ones you trust while deleting the rest. Support for Container Tabs.";
+        license = licenses.mit;
+        platforms = platforms.all;
+      };
+  };
+  "css-exfil-protection" = buildFirefoxXpiAddon {
+    pname = "css-exfil-protection";
+    version = "1.1.0";
+    addonId = "{7fc8ef53-24ec-4205-87a4-1e745953bb0d}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3631278/css_exfil_protection-1.1.0-an+fx.xpi";
+    sha256 = "1e31940698d3c5477a6980688ba21125d70afff21e02915956d4b0386d44ab5d";
+    meta = with lib;
+      {
+        homepage = "https://www.mike-gualtieri.com/css-exfil-vulnerability-tester";
+        description = "Guard your browser against CSS Exfil attacks!\n\nCSS Exfil is a method attackers can use to steal data from web pages using Cascading Style Sheets (CSS).  This plugin sanitizes and blocks any CSS rules which may be designed to steal data.";
+        license = licenses.mit;
+        platforms = platforms.all;
+      };
   };
   "decentraleyes" = buildFirefoxXpiAddon {
     pname = "decentraleyes";
-    version = "2.0.14";
+    version = "2.0.15";
     addonId = "jid1-BoFifL9Vbdl2zQ@jetpack";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3539177/decentraleyes-2.0.14-an+fx.xpi?src=";
-    sha256 = "71a55834ee991605d461f304271f989aa1147e1cf772e25787cbada19ab0ba51";
-    meta = with stdenv.lib; {
-      homepage = "https://decentraleyes.org";
-      description = ''
-        Protects you against tracking through "free", centralized, content delivery. It prevents a lot of requests from reaching networks like Google Hosted Libraries, and serves local files to keep sites from breaking. Complements regular content blockers.'';
-      license = licenses.mpl20;
-      platforms = platforms.all;
-    };
-  };
-  "disconnect" = buildFirefoxXpiAddon {
-    pname = "disconnect";
-    version = "5.19.3";
-    addonId = "2.0@disconnect.me";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3363084/disconnect-5.19.3-fx.xpi?src=";
-    sha256 = "0c3c632fd997de1459d21e757c6ceeaa90e533d1bb434014b63bbac797894a3d";
-    meta = with stdenv.lib; {
-      homepage = "https://disconnect.me/";
-      description = "Make the web faster, more private, and more secure.";
-      license = licenses.gpl3;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3672658/decentraleyes-2.0.15-an+fx.xpi";
+    sha256 = "2554069168458cc1351e5d37ee995de044e514ec72369829ff0bcbf31d586ddf";
+    meta = with lib;
+      {
+        homepage = "https://decentraleyes.org";
+        description = "Protects you against tracking through \"free\", centralized, content delivery. It prevents a lot of requests from reaching networks like Google Hosted Libraries, and serves local files to keep sites from breaking. Complements regular content blockers.";
+        license = licenses.mpl20;
+        platforms = platforms.all;
+      };
   };
   "double_click_new_tab" = buildFirefoxXpiAddon {
     pname = "double_click_new_tab";
     version = "1.0";
     addonId = "Double_Click_New_Tab_senna5150ando@gmail.com";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/884173/double_click_new_tab-1.0-an+fx-linux.xpi?src=";
+    url = "https://addons.mozilla.org/firefox/downloads/file/884173/double_click_new_tab-1.0-an+fx-linux.xpi";
     sha256 = "8f0282d7dedec985d73db879de47c7cac556e37ec3347313bfee4521e2451e21";
-    meta = with stdenv.lib; {
-      description = "Open links as background tabs by Double clicking links";
-      license = licenses.mit;
-      platforms = platforms.all;
-    };
+    meta = with lib;
+      {
+        description = "Open links as background tabs by Double clicking links";
+        license = licenses.mit;
+        platforms = platforms.all;
+      };
   };
   "facebook-container" = buildFirefoxXpiAddon {
     pname = "facebook-container";
-    version = "2.1.1";
+    version = "2.1.2";
     addonId = "@contain-facebook";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3548655/facebook_container-2.1.1-fx.xpi?src=";
-    sha256 = "b8cca6d366bf1aa601cd8f0e4e6c51443e067e32c62900293aebea58ff11825d";
-    meta = with stdenv.lib; {
-      homepage = "https://github.com/mozilla/contain-facebook";
-      description =
-        "Prevent Facebook from tracking you around the web. The Facebook Container extension for Firefox helps you take control and isolate your web activity from Facebook.";
-      license = licenses.mpl20;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3650887/facebook_container-2.1.2-fx.xpi";
+    sha256 = "86c75e90ae6f3f59999406c34229f05d563e024e293dfcabcfea10c75ce76cf7";
+    meta = with lib;
+      {
+        homepage = "https://github.com/mozilla/contain-facebook";
+        description = "Prevent Facebook from tracking you around the web. The Facebook Container extension for Firefox helps you take control and isolate your web activity from Facebook.";
+        license = licenses.mpl20;
+        platforms = platforms.all;
+      };
   };
   "google-container" = buildFirefoxXpiAddon {
     pname = "google-container";
-    version = "1.5.0";
+    version = "1.5.3";
     addonId = "@contain-google";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3386853/google_container-1.5.0-fx.xpi?src=";
-    sha256 = "58ce3f30191c8193574ee01e07c93363488be89c17a7099a7df9e461b3b2d309";
-    meta = with stdenv.lib; {
-      homepage = "https://github.com/containers-everywhere/contain-google";
-      description = ''
-        THIS IS NOT AN OFFICIAL ADDON FROM MOZILLA!
-        It is a fork of the Facebook Container addon.
-
-        Prevent Google from tracking you around the web. The Google Container extension helps you take control and isolate your web activity from Google.'';
-      license = licenses.mpl20;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3691597/google_container-1.5.3-fx.xpi";
+    sha256 = "b92be6ae7d9a3814a16752453c845b1175e97a2314bdcef4d5a552ea8ecc4583";
+    meta = with lib;
+      {
+        homepage = "https://github.com/containers-everywhere/contain-google";
+        description = "THIS IS NOT AN OFFICIAL ADDON FROM MOZILLA!\nIt is a fork of the Facebook Container addon.\n\nPrevent Google from tracking you around the web. The Google Container extension helps you take control and isolate your web activity from Google.";
+        license = licenses.mpl20;
+        platforms = platforms.all;
+      };
   };
-  "swedish-dictionary" = buildFirefoxXpiAddon {
-    pname = "swedish-dictionary";
+  "gorans-hemmasnickrade-ordli" = buildFirefoxXpiAddon {
+    pname = "gorans-hemmasnickrade-ordli";
     version = "1.21";
     addonId = "swedish@dictionaries.addons.mozilla.org";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3539390/swedish_dictionary-1.21.xpi?src=";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3539390/swedish_dictionary-1.21.xpi";
     sha256 = "7d2ce7f7bfb65cfb5dd4138686acd977cf589c6ce91fc342ae5e2e26a09d1dbe";
-    meta = with stdenv.lib; {
-      description = "Swedish spell-check dictionary.";
-      license = licenses.lgpl3;
-      platforms = platforms.all;
-    };
+    meta = with lib;
+      {
+        description = "Swedish spell-check dictionary.";
+        license = licenses.lgpl3;
+        platforms = platforms.all;
+      };
   };
   "https-everywhere" = buildFirefoxXpiAddon {
     pname = "https-everywhere";
-    version = "2020.3.16";
+    version = "2021.1.27";
     addonId = "https-everywhere@eff.org";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3528100/https_everywhere-2020.3.16-an+fx.xpi?src=";
-    sha256 = "6fa87c2f90d938f49cbd8ea949a6ca0999687952af3293cab1b11f5bc0b7b9ff";
-    meta = with stdenv.lib; {
-      homepage = "https://www.eff.org/https-everywhere";
-      description =
-        "Encrypt the web! HTTPS Everywhere is a Firefox extension to protect your communications by enabling HTTPS encryption automatically on sites that are known to support it, even when you type URLs or follow links that omit the https: prefix.";
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3716461/https_everywhere-2021.1.27-an+fx.xpi";
+    sha256 = "da049748bba7282c0f8c0ab85ac8f494e795e79d6bdc6f9f726d687aa8cc2a1f";
+    meta = with lib;
+      {
+        homepage = "https://www.eff.org/https-everywhere";
+        description = "Encrypt the web! HTTPS Everywhere is a Firefox extension to protect your communications by enabling HTTPS encryption automatically on sites that are known to support it, even when you type URLs or follow links that omit the https: prefix.";
+        platforms = platforms.all;
+      };
   };
-  "image-expander-4chan" = buildFirefoxXpiAddon {
-    pname = "image-expander-4chan";
-    version = "0.4";
-    addonId = "{3859d492-cbb8-4ce1-a1c2-d9394ea829df}";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/776266/4chan_image_expander_saver-0.4-an+fx-windows.xpi?src=";
-    sha256 = "9c0ac9fefb3e16048dd4dc6086e9f32a2d9daacc0c0b019c9700b43c126a1a50";
-    meta = with stdenv.lib; {
-      description = ''
-        Expand the images and Videos of  <a rel="nofollow" href="https://outgoing.prod.mozaws.net/v1/5bd5997ffc904f5dfc97f3f673fe09ba0638388c518d81501ac67ad456186a4d/http%3A//4chan.org">4chan.org</a>'';
-      license = licenses.mpl20;
-      platforms = platforms.all;
-    };
+  "neat-url" = buildFirefoxXpiAddon {
+    pname = "neat-url";
+    version = "5.0.0";
+    addonId = "neaturl@hugsmile.eu";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3557562/neat_url-5.0.0-an+fx.xpi";
+    sha256 = "0b41899ea0eb424517bbe7ce067eae22de0ff659a0f171671e604edef86cfa2c";
+    meta = with lib;
+      {
+        homepage = "http://hugsmile.eu";
+        description = "Remove garbage from URLs.";
+        license = licenses.gpl2;
+        platforms = platforms.all;
+      };
   };
   "privacy-possum" = buildFirefoxXpiAddon {
     pname = "privacy-possum";
     version = "2019.7.18";
     addonId = "woop-NoopscooPsnSXQ@jetpack";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3360398/privacy_possum-2019.7.18-an+fx.xpi?src=";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3360398/privacy_possum-2019.7.18-an+fx.xpi";
     sha256 = "0840a8c443e25d8a65da22ce1b557216456b900a699b3541e42e1b47e8cb6c0e";
-    meta = with stdenv.lib; {
-      homepage = "https://github.com/cowlicks/privacypossum";
-      description =
-        "Privacy Possum monkey wrenches common commercial tracking methods by reducing and falsifying the data gathered by tracking companies.";
-      license = licenses.gpl3;
-      platforms = platforms.all;
-    };
+    meta = with lib;
+      {
+        homepage = "https://github.com/cowlicks/privacypossum";
+        description = "Privacy Possum monkey wrenches common commercial tracking methods by reducing and falsifying the data gathered by tracking companies.";
+        license = licenses.gpl3;
+        platforms = platforms.all;
+      };
+  };
+  "skip-redirect" = buildFirefoxXpiAddon {
+    pname = "skip-redirect";
+    version = "2.3.4";
+    addonId = "skipredirect@sblask";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3632211/skip_redirect-2.3.4-an+fx.xpi";
+    sha256 = "bee434ea6410aca1321a20ed62a15b3b3c295d95eb4445b88adb0970652f1b3a";
+    meta = with lib;
+      {
+        description = "Some web pages use intermediary pages before redirecting to a final page. This add-on tries to extract the final url from the intermediary url and goes there straight away if successful.";
+        license = licenses.mit;
+        platforms = platforms.all;
+      };
+  };
+  "smart-referer" = buildFirefoxXpiAddon {
+    pname = "smart-referer";
+    version = "0.2.15";
+    addonId = "smart-referer@meh.paranoid.pk";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3470999/smart_referer-0.2.15-an+fx.xpi";
+    sha256 = "4751ab905c4d9d13b1f21c9fc179efed7d248e3476effb5b393268b46855bf1a";
+    meta = with lib;
+      {
+        homepage = "https://gitlab.com/smart-referer/smart-referer";
+        description = "Improve your privacy by limiting Referer information leak!";
+        platforms = platforms.all;
+      };
   };
   "tab-session-manager" = buildFirefoxXpiAddon {
     pname = "tab-session-manager";
-    version = "6.0.0";
+    version = "6.4.0";
     addonId = "Tab-Session-Manager@sienori";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3542590/tab_session_manager-6.0.0-fx.xpi?src=";
-    sha256 = "988fb774da67858e4306a42587347265b6d01caa2ae116b85314a1d81856d0a7";
-    meta = with stdenv.lib; {
-      homepage = "https://tab-session-manager.sienori.com/";
-      description =
-        "Save and restore the state of windows and tabs. It also supports automatic saving and cloud sync.";
-      license = licenses.mpl20;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3693191/tab_session_manager-6.4.0-fx.xpi";
+    sha256 = "10decc0b2e57d641afa58bf61a600e5448a17cca147e8c72c04a8867d8ab12c4";
+    meta = with lib;
+      {
+        homepage = "https://tab-session-manager.sienori.com/";
+        description = "Save and restore the state of windows and tabs. It also supports automatic saving and cloud sync.";
+        license = licenses.mpl20;
+        platforms = platforms.all;
+      };
+  };
+  "temporary-containers" = buildFirefoxXpiAddon {
+    pname = "temporary-containers";
+    version = "1.9.1";
+    addonId = "{c607c8df-14a7-4f28-894f-29e8722976af}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3623550/temporary_containers-1.9.1-fx.xpi";
+    sha256 = "392ef6ff878f4969bf753801a4e99f19ff2108e2d9c978e2d5570c8b13e0a2ac";
+    meta = with lib;
+      {
+        homepage = "https://github.com/stoically/temporary-containers";
+        description = "Open tabs, websites, and links in automatically managed disposable containers. Containers isolate data websites store (cookies, storage, and more) from each other, enhancing your privacy and security while you browse.";
+        license = licenses.mit;
+        platforms = platforms.all;
+      };
   };
   "tree-style-tab" = buildFirefoxXpiAddon {
     pname = "tree-style-tab";
-    version = "3.4.8";
+    version = "3.6.5";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3536021/tree_style_tab_-3.4.8-fx.xpi?src=";
-    sha256 = "93b297737d95a759f438d3d075101dec20b3768de008818af45e6d987555b9a3";
-    meta = with stdenv.lib; {
-      homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
-      description = "Show tabs like a tree.";
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3705500/tree_style_tab_-3.6.5-fx.xpi";
+    sha256 = "86fa603dde05569f954e4281ef96cefb5313953671be7dd8bedaaa80c0912684";
+    meta = with lib;
+      {
+        homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
+        description = "Show tabs like a tree.";
+        platforms = platforms.all;
+      };
   };
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.26.0";
+    version = "1.33.2";
     addonId = "uBlock0@raymondhill.net";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3541312/ublock_origin-1.26.0-an+fx.xpi?src=";
-    sha256 = "77dc9b59c953a6040e871e72be969e19ecdec841cc851295c21d1c0e755c8620";
-    meta = with stdenv.lib; {
-      homepage = "https://github.com/gorhill/uBlock#ublock-origin";
-      description = "Finally, an efficient blocker. Easy on CPU and memory.";
-      license = licenses.gpl3;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3719054/ublock_origin-1.33.2-an+fx.xpi";
+    sha256 = "5c3a5ef6f5b5475895053238026360020d6793b05541d20032ea9dd1c9cae451";
+    meta = with lib;
+      {
+        homepage = "https://github.com/gorhill/uBlock#ublock-origin";
+        description = "Finally, an efficient wide-spectrum content blocker. Easy on CPU and memory.";
+        license = licenses.gpl3;
+        platforms = platforms.all;
+      };
+  };
+  "umatrix" = buildFirefoxXpiAddon {
+    pname = "umatrix";
+    version = "1.4.0";
+    addonId = "uMatrix@raymondhill.net";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3396815/umatrix-1.4.0-an+fx.xpi";
+    sha256 = "991f0fa5c64172b8a2bc0a010af60743eba1c18078c490348e1c6631882cbfc7";
+    meta = with lib;
+      {
+        homepage = "https://github.com/gorhill/uMatrix";
+        description = "Point &amp; click to forbid/allow any class of requests made by your browser. Use it to block scripts, iframes, ads, facebook, etc.";
+        license = licenses.gpl3;
+        platforms = platforms.all;
+      };
   };
   "user-agent-string-switcher" = buildFirefoxXpiAddon {
     pname = "user-agent-string-switcher";
-    version = "0.3.5";
+    version = "0.4.6";
     addonId = "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}";
-    url =
-      "https://addons.mozilla.org/firefox/downloads/file/3527040/user_agent_switcher_and_manager-0.3.5-an+fx.xpi?src=";
-    sha256 = "ad54cff6efbb0209dfdb30670519b38ab7db6e489978fe6a1fce8dc46ccbd0ed";
-    meta = with stdenv.lib; {
-      homepage = "http://add0n.com/useragent-switcher.html";
-      description =
-        "Spoof websites trying to gather information about your web navigation—like your browser type and operating system—to deliver distinct content you may not want.";
-      license = licenses.mpl20;
-      platforms = platforms.all;
-    };
+    url = "https://addons.mozilla.org/firefox/downloads/file/3700959/user_agent_switcher_and_manager-0.4.6-an+fx.xpi";
+    sha256 = "36f69e0ac3c22c5d8b498098bd96e3cc07acf70a51f0219c51504403265599a1";
+    meta = with lib;
+      {
+        homepage = "http://add0n.com/useragent-switcher.html";
+        description = "Spoof websites trying to gather information about your web navigation—like your browser type and operating system—to deliver distinct content you may not want.";
+        license = licenses.mpl20;
+        platforms = platforms.all;
+      };
   };
 }

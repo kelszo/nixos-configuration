@@ -1,22 +1,23 @@
-{ pkgs, config, ... }: {
-  # START --- kaby-lake cpu
-  hardware.cpu.intel.updateMicrocode = true;
-  hardware.enableAllFirmware = true;
+{ pkgs, config, lib, ... }: {
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+    enableAllFirmware = true;
+  };
 
   hardware.opengl.extraPackages = with pkgs; [
     vaapiIntel
     vaapiVdpau
     libvdpau-va-gl
   ];
-  # END --- kaby-lake cpu
 
-  # START --- laptop
   services.xserver.libinput = {
     enable = true;
-    tapping = true;
-    disableWhileTyping = true;
-    scrollMethod = "twofinger";
-    naturalScrolling = true;
+    touchpad = {
+      tapping = true;
+      disableWhileTyping = true;
+      scrollMethod = "twofinger";
+      naturalScrolling = true;
+    };
   };
 
   hardware.acpilight.enable = true;
@@ -29,16 +30,12 @@
   powerManagement.enable = true;
   #powerManagement.cpuFreqGovernor = "ondemand";
 
-  services.throttled.enable = true;
-
+  services.throttled.enable = lib.mkDefault true;
   services.thermald.enable = true;
 
   boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
-  # END --- laptop
 
-  # START --- ssd
   boot.kernel.sysctl = { "vm.swappiness" = 1; };
 
   services.fstrim.enable = true;
-  # END --- ssd
 }

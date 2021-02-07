@@ -70,6 +70,7 @@
   "network.cookie.cookieBehavior" = 1;
   "network.cookie.lifetimePolicy" = 2;
   "network.dns.disablePrefetch" = true;
+  "network.dns.disablePrefetchFromHTTPS" = true;
   "network.dnsCacheEntries" = 100;
   "network.dnsCacheExpiration" = 60;
   "network.http.referer.XOriginPolicy" = 2;
@@ -79,6 +80,7 @@
   "network.http.sendSecureXSiteReferrer" = false;
   "network.http.speculative-parallel-limit" = 0;
   "network.predictor.enabled" = false;
+  "network.predictor.enable-prefetch" = false;
   "network.prefetch-next" = false;
   "network.security.esni.enabled" = true;
   "network.websocket.enabled" = false;

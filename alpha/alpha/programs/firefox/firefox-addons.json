@@ -11,9 +11,14 @@
   { "slug": "görans-hemmasnickrade-ordli" },
   { "slug": "bitwarden-password-manager" },
   { "slug": "cookie-autodelete" },
-  { "slug": "disconnect" },
   { "slug": "facebook-container" },
   { "slug": "https-everywhere" },
-  { "slug": "image-expander-4chan" },
-  { "slug": "4chan-faster-images" }
+  { "slug": "clearurls" },
+  { "slug": "temporary-containers" },
+  { "slug": "umatrix" },
+  { "slug": "neat-url" },
+  { "slug": "skip-redirect" },
+  { "slug": "css-exfil-protection" },
+  { "slug": "smart-referer" },
+  { "slug": "amiunique" }
 ]

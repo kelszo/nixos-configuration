@@ -14,7 +14,6 @@
     "uas"
     "sd_mod"
     "rtsx_pci_sdmmc"
-    "aes_x86_64"
     "aesni_intel"
     "cryptd"
     "dm_crypt"
@@ -23,10 +22,14 @@
   ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" "acpi_call" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   boot.blacklistedKernelModules = [ "psmouse" ];
-  boot.kernelParams =
-    [ "i915.enable_fbc=1" "i915.enable_psr=2" "intel_pstate=no_hwp" ];
+  boot.kernelParams = [
+    "i915.enable_fbc=1"
+    "i915.enable_psr=2"
+    "intel_pstate=no_hwp"
+    "mem_sleep_default=deep"
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c334dcc1-5ee6-4269-85bb-e002ee1e7ffc";

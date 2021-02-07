@@ -106,9 +106,9 @@
 
   "go" = {
     name = "go";
-    publisher = "ms-vscode";
-    version = "0.13.1";
-    sha256 = "18x89g4b085crfm1wnfnsznwlvc30xqcivzf5nw9d1z5rg2dva5h";
+    publisher = "golang";
+    version = "0.14.4";
+    sha256 = "1rid3vxm4j64kixlm65jibwgm4gimi9mry04lrgv0pa96q5ya4pi";
   };
 
   # "latex-workshop" = {
