@@ -1,90 +1,111 @@
 { pkgs, ... }: {
   home.packages = with pkgs;
     let
-      vcr = callPackage ../../packages/vcr.nix { };
-      euclid = callPackage ../../packages/euclid.nix { };
-    in [
-      # basics
-      xclip # terminal clipboard manager
-      xorg.xbacklight # change brightness
-      notify-desktop # send test notifications
-      pulsemixer # terminal audio mixer
-      iw
-      unzip
-      euclid # bspwm moving scripts
-      killall
-      pkg-config
+      vcr = callPackage ../../packages/vcr.nix {};
+      euclid = callPackage ../../packages/euclid.nix {};
+      # slicer = callPackage ../../packages/slicer.nix { };
+      san-francisco = callPackage ../../packages/san-francisco.nix {};
+    in
+      [
+        # basics
+        xclip # terminal clipboard manager
+        unzip
+        xdg-desktop-portal-gtk # chromium screen sharing
 
-      # terminal
-      unstable.ranger # file manager
-      unstable.ueberzug
+        # terminal
+        ranger # file manager
+        ueberzug
 
-      # fonts
-      tamsyn
-      terminus_font
-      terminus_font_ttf
-      vcr
+        # fonts
+        #tamsyn
+        terminus_font
+        terminus_font_ttf
+        vcr
+        numix-icon-theme-circle
+        san-francisco
 
-      # media
-      nomacs
-      mpv
-      unstable.spotify-tui
-      spotify
-      pinta # image editor
-      xournal # pdf-editor
-      unstable.standardnotes # note-taking
-      arandr # screens
+        # media
+        nomacs
+        vlc
+        spotify
+        pinta # image editor
+        xournal # pdf-editor
+        arandr # screens
+        deluge
+        zettlr # knowledge-bank
+        joplin-desktop # note taking
+        calibre # e-book management
+        audacity # voice recorder
+        youtube-dl
+        zotero # bibliographic manager
+        # slicer # 3d slicer for mri
+        protonmail-bridge
+        ifuse # connect iphone
+        libimobiledevice # connect iphone
+        libheif # apple image format
+        multimc
+        papermc
+        teams
 
-      # screen recording/shotting
-      #obs-studio 
-      peek
-      simplescreenrecorder
-      escrotum
+        # RAW-image processing
+        darktable
+        digikam
+        shotwell
 
-      # other
-      bitwarden # password manager
-      libreoffice # office suite
-      thunderbird # email client
-      unstable.protonmail-bridge
-      anki # flashcards
-      brave # backup browser
-      chromium
+        # gnome
+        gnome3.gnome-tweaks
+        dconf2nix
+        gnome3.dconf-editor
+        # drive management
+        gparted
+        xfsprogs
+        # extensions
+        gnomeExtensions.window-is-ready-remover
+        gnomeExtensions.night-theme-switcher
+        gnomeExtensions.sound-output-device-chooser
+        gnomeExtensions.emoji-selector
 
-      # messaging
-      discord
-      slack
-      unstable.riot-desktop
-      unstable.signal-desktop
-      unstable.zoom-us
+        # screen recording/shotting
+        peek
+        simplescreenrecorder
 
-      # Spelling
-      hunspell
-      hunspellDicts.en-au-large
-      hunspellDicts.sv-se
+        # other
+        bitwarden # password manager
+        libreoffice # office suite
+        evolution # email and calendar client
+        anki # flashcards
 
-      # dev
-      insomnia # http-request client
-      docker-compose
-      kubectl # kubernetes
-      kubernetes-helm
-      doctl # digital ocean
+        # messaging
+        discord
+        slack
+        element-desktop
+        signal-desktop
+        zoom-us
 
-      # database
-      robo3t # mongodb
-      dbeaver # sql manager
-      postgresql
+        # Spelling
+        hunspell
+        hunspellDicts.en-au-large
+        hunspellDicts.sv-se
 
-      # golang
-      unstable.go
-      unstable.gotools
-      packr
+        # dev
+        awscli
+        awsebcli # elastic beanstalk
+        insomnia # http-request client
+        docker-compose
 
-      ## javascript/typescript
-      nodejs
+        # database
+        robo3t # mongodb
+        dbeaver # sql manager
+        postgresql
 
-      # nixos
-      nur.repos.rycee.firefox-addons-generator
-      nixfmt
-      nodePackages.npm-check-updates
-    ];
+        ## javascript/typescript
+        nodejs
+        yarn
+        nodePackages.npm-check-updates
+
+        # nixos
+        nur.repos.rycee.firefox-addons-generator
+        nixfmt
+        rnix-lsp
+      ];
 }

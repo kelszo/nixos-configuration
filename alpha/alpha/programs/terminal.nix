@@ -7,13 +7,10 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     shellAliases = {
-      "chmodpro" =
-        "find . -type d -exec chmod 775 {} ; && find . -type f -exec chmod 644 {} ;";
       "du-mongossh" =
         "ssh -fN -L 6666:localhost:27017 digitalungdom@digitalungdom.se";
       "kelszo-psqlssh" = "ssh -fN -L 6666:localhost:5432 kelszo.com";
       "kelszo-mongossh" = "ssh -fN -L 6666:localhost:27017 kelszo.com";
-      "rgbg" = "systemctl --user restart random-background.service";
     };
     sessionVariables = { GOPATH = "$HOME/go"; };
     oh-my-zsh = {

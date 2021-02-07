@@ -20,7 +20,8 @@
   "markdown.extension.toc.githubCompatibility" = true;
 
   #golang
-  "go.useLanguageServer" = true;
+  #"go.useLanguageServer" = true;
+  "go.formatTool" = "goimports";
 
   "[go]" = {
     "editor.formatOnSave" = true;
@@ -79,4 +80,11 @@
     "editor.tabSize" = 2;
     "editor.autoIndent" = true;
   };
+
+  "editor.minimap.enabled" = false;
+
+  "[typescript]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+  "[javascript]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+  "sort-imports.default-sort-style" = "module";
+  "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
 }

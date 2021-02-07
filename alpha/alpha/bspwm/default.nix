@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./dunst.nix ./rofi.nix ./sxhkd.nix ];
+  imports = [ ./dunst.nix ./rofi.nix ./sxhkd.nix ./randr.nix ];
 
   xsession = {
     enable = true;
@@ -9,7 +9,7 @@
       extraConfig = ''
         set -U SXHKD_SHELL ${pkgs.zsh}/bin/zsh
         systemctl --user restart pulseaudio.service
-        $HOME/szobar &
+        nohup $HOME/szobar &
         bspc config top_padding 30
         bspc config border_width 5
         bspc config window_gap 10
@@ -22,6 +22,13 @@
         bspc config pointer_follows_focus false
         bspc config normal_frame_opacity 1 
         bspc config focused_frame_opacity 1
+        bspc config remove_disabled_monitors true
+        bspc config remove_unplugged_monitors true
+        bspc config merge_overlapping_monitors true
+
+        bspc rule --add Firefox:\* state=floating
+        bspc rule --add Firefox:Navigator state=tiled
+        bspc rule --add Zathura state=tiled
       '';
 
       monitors = {
@@ -34,7 +41,7 @@
 
   services.picom = {
     enable = true;
-    vSync = true;
+    vSync = false;
     shadow = false;
   };
 

@@ -12,7 +12,6 @@ in fetchzip {
       local destname="$(echo "$i" | sed -E 's|-[[:digit:].]+\.ttf$|.ttf|')"
       install -Dm 644 "$i" "$out/share/fonts/truetype/$destname"
     done
-    # install -Dm 644 COPYING "$out/share/doc/vcr-osd-mono-ttf/COPYING"
   '';
 
   meta = {
