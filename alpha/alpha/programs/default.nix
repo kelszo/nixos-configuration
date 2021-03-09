@@ -3,12 +3,12 @@
 
   programs.chromium = {
     enable = true;
-    package = pkgs.ungoogled-chromium;
+    package = pkgs.brave;
     extensions = [
-      "nngceckbapebfimnlniiiahkandclblb" # bitwarden
-      "kiodaajmphnkcajieajajinghpejdjai" # Popup Blocker Pro
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-      "edacconmaakjimmfgnblocblbcdcpbko" # session buddy
+      { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden
+      { id = "kiodaajmphnkcajieajajinghpejdjai"; } # Popup Blocker Pro
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+      { id = "edacconmaakjimmfgnblocblbcdcpbko"; } # session buddy
     ];
   };
 
@@ -30,8 +30,10 @@
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs;
-      let obs-droidcam = callPackage ../../../packages/obs-droidcam.nix { };
-      in [ obs-v4l2sink obs-droidcam ];
+      let
+        obs-droidcam = callPackage ../../../packages/obs-droidcam.nix {};
+      in
+        [ obs-v4l2sink obs-droidcam ];
   };
 
   programs.go = {

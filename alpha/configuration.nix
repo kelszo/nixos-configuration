@@ -18,6 +18,8 @@
   ];
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -64,15 +66,19 @@
     longitude = 18.0686;
   };
 
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   nix = {
     optimise.automatic = true;
     autoOptimiseStore = true;
-    gc.automatic = true;
+    gc.automatic = false;
   };
 
   system.autoUpgrade = {
     enable = true;
-    allowReboot = true;
+    allowReboot = false;
     channel = "https://nixos.org/channels/nixos-unstable";
   };
 

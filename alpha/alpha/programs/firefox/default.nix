@@ -2,6 +2,12 @@
   programs.firefox = {
     enable = true;
     enableGnomeExtensions = true;
+    package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+      forceWayland = true;
+      extraPolicies = {
+        ExtensionSettings = {};
+      };
+    };
     profiles = {
       safefox = {
         id = 0;

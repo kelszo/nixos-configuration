@@ -1,12 +1,22 @@
-{ stdenv, fetchFromGitHub, sass, glib, libxml2, gdk-pixbuf, gtk-engine-murrine
-, gtk_engines, optipng, inkscape }:
+{ stdenv
+, fetchFromGitHub
+, sass
+, glib
+, libxml2
+, gdk-pixbuf
+, gtk-engine-murrine
+, gtk_engines
+, optipng
+, inkscape
+}:
 let
   color = "-light";
   opacity = "";
   alt = "";
   icon = "";
   nix-snowflake = ./nix-snowflake.svg;
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   version = "2020-12-03";
   pname = "WhiteSur-gtk-theme";
 
@@ -95,6 +105,8 @@ in stdenv.mkDerivation rec {
 
     mkdir -p $out/share/themes/whitesur/plank
     cp -r src/other/plank/theme${color}/*.theme $out/share/themes/whitesur/plank
+
+    echo -e 'VteTerminal,\n TerminalScreen,\n vte-terminal {\n  padding: 30px 30px 30px 30px;\n  -VteTerminal-inner-border: 30px 30px 30px 30px;\n}' >> $out/share/themes/whitesur/gtk-3.0/gtk.css
   '';
 
 }

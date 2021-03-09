@@ -22,13 +22,14 @@
   ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" "acpi_call" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
   boot.blacklistedKernelModules = [ "psmouse" ];
   boot.kernelParams = [
     "i915.enable_fbc=1"
     "i915.enable_psr=2"
     "intel_pstate=no_hwp"
     "mem_sleep_default=deep"
+    "nvme_core.default_ps_max_latency_us=6000"
   ];
 
   fileSystems."/" = {
@@ -42,7 +43,7 @@
   };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/beb0a8d9-4c1e-4062-8675-5412918bcc56"; }];
+    [ { device = "/dev/disk/by-uuid/beb0a8d9-4c1e-4062-8675-5412918bcc56"; } ];
 
   nix.maxJobs = lib.mkDefault 8;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";

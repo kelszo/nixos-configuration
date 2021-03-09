@@ -8,7 +8,17 @@
       ) { inherit pkgs; }
     ).nixos
   ];
-  security.sudo.enable = true;
+
+  security.doas = {
+    enable = true;
+    extraRules = [
+      {
+        users = [ "alpha" ];
+        keepEnv = true;
+        persist = true;
+      }
+    ];
+  };
 
   users.defaultUserShell = pkgs.zsh;
   environment.pathsToLink = [ "/libexec" "/share/zsh" ];
@@ -24,7 +34,7 @@
     syntaxHighlighting.enable = true;
     ohMyZsh = {
       enable = true;
-      plugins = [ "git" "docker" "sudo" ];
+      plugins = [ "git" "docker" ];
     };
   };
 
@@ -50,7 +60,7 @@
     docker = {
       enable = true;
       autoPrune.enable = true;
-      # enableOnBoot = false;
+      enableOnBoot = false;
     };
   };
 
@@ -59,11 +69,11 @@
   environment.gnome3.excludePackages = with pkgs.gnome3; [
     # baobab
     eog
+    epiphany # web-browser
     gedit
     gnome-font-viewer
     # pkgs.gnome-connections
     simple-scan
-    gnome-terminal
   ];
 
   security.pam.services.gdm.enableGnomeKeyring = true;

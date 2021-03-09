@@ -2,10 +2,10 @@
 {
   "amiunique" = buildFirefoxXpiAddon {
     pname = "amiunique";
-    version = "1.0.8";
+    version = "1.0.9";
     addonId = "@amiunique-extension";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3702836/amiunique-1.0.8-fx.xpi";
-    sha256 = "d3f01ec47a75b6d382b1717929d7059fe7c198b9fb09f724b7ec4f9087d7de0b";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3727610/amiunique-1.0.9-fx.xpi";
+    sha256 = "7e5c9fedfea028da404917804408b05275fd8b41b4d5252c4730308d51ba0cd6";
     meta = with lib;
       {
         homepage = "https://amiunique.org";
@@ -235,10 +235,10 @@
   };
   "temporary-containers" = buildFirefoxXpiAddon {
     pname = "temporary-containers";
-    version = "1.9.1";
+    version = "1.9.2";
     addonId = "{c607c8df-14a7-4f28-894f-29e8722976af}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3623550/temporary_containers-1.9.1-fx.xpi";
-    sha256 = "392ef6ff878f4969bf753801a4e99f19ff2108e2d9c978e2d5570c8b13e0a2ac";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3723251/temporary_containers-1.9.2-fx.xpi";
+    sha256 = "3340a08c29be7c83bd0fea3fc27fde71e4608a4532d932114b439aa690e7edc0";
     meta = with lib;
       {
         homepage = "https://github.com/stoically/temporary-containers";
@@ -249,10 +249,10 @@
   };
   "tree-style-tab" = buildFirefoxXpiAddon {
     pname = "tree-style-tab";
-    version = "3.6.5";
+    version = "3.7.3";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3705500/tree_style_tab_-3.6.5-fx.xpi";
-    sha256 = "86fa603dde05569f954e4281ef96cefb5313953671be7dd8bedaaa80c0912684";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3734736/tree_style_tab_-3.7.3-fx.xpi";
+    sha256 = "9b2bf3723115c6d389197afa374ac8294d95ca5e3e74a68dba5f365536cab9f6";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";

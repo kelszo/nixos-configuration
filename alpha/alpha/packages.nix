@@ -44,7 +44,6 @@
         libimobiledevice # connect iphone
         libheif # apple image format
         multimc
-        papermc
         teams
 
         # RAW-image processing
@@ -61,7 +60,6 @@
         xfsprogs
         # extensions
         gnomeExtensions.window-is-ready-remover
-        gnomeExtensions.night-theme-switcher
         gnomeExtensions.sound-output-device-chooser
         gnomeExtensions.emoji-selector
 
@@ -88,10 +86,17 @@
         hunspellDicts.sv-se
 
         # dev
-        awscli
-        awsebcli # elastic beanstalk
+        # awscli
+        # awsebcli # elastic beanstalk
         insomnia # http-request client
         docker-compose
+        gitAndTools.gh # github client
+
+        ## building
+        # gnumake
+        # nodePackages.node-gyp
+        # binutils-unwrapped
+        # zlib
 
         # database
         robo3t # mongodb
@@ -102,6 +107,9 @@
         nodejs
         yarn
         nodePackages.npm-check-updates
+
+        ## python
+        python39Full
 
         # nixos
         nur.repos.rycee.firefox-addons-generator

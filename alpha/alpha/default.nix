@@ -29,6 +29,10 @@ in
     )
   ];
 
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+  };
+
   imports = [ ./programs ./packages.nix ./gnome ];
 
   # NOTE: This is needed for enviroment variables to be set by Home Manager.

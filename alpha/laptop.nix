@@ -1,4 +1,9 @@
 { pkgs, config, lib, ... }: {
+  imports = [
+    <nixos-hardware/dell/xps/13-9370>
+  ];
+
+
   hardware = {
     cpu.intel.updateMicrocode = true;
     enableAllFirmware = true;
@@ -36,6 +41,7 @@
     throttled.enable = true;
     thermald.enable = true;
     fstrim.enable = true;
+    usbmuxd.enable = true;
   };
 
   powerManagement = {
