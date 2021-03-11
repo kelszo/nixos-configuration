@@ -14,10 +14,10 @@ let
   opacity = "";
   alt = "";
   icon = "";
-  nix-snowflake = ./nix-snowflake.svg;
+  nix-snowflake = ../assets/nix-snowflake.svg;
 in
 stdenv.mkDerivation rec {
-  version = "2020-12-03";
+  version = "2020-12-03.01";
   pname = "WhiteSur-gtk-theme";
 
   # https://github.com/vinceliuice/WhiteSur-gtk-theme
@@ -106,7 +106,7 @@ stdenv.mkDerivation rec {
     mkdir -p $out/share/themes/whitesur/plank
     cp -r src/other/plank/theme${color}/*.theme $out/share/themes/whitesur/plank
 
-    echo -e 'VteTerminal,\n TerminalScreen,\n vte-terminal {\n  padding: 30px 30px 30px 30px;\n  -VteTerminal-inner-border: 30px 30px 30px 30px;\n}' >> $out/share/themes/whitesur/gtk-3.0/gtk.css
+    echo -e 'vte-terminal {\n  padding: 30px 30px 30px 30px;\n}' >> $out/share/themes/whitesur/gtk-3.0/gtk.css
   '';
 
 }

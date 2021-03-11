@@ -5,17 +5,16 @@ Personal NixOS configuration
 ## Structure
 
 ```
-devices
-  - xps9370
-users
-  - alpha
-homes
-  - gnome
-packages
-common
-  - secrets
-  - packages
-  - programs
+├── assets
+├── configuration.nix
+├── desktops
+├── dotfiles
+├── machines
+├── modules
+├── packages
+├── programs
+├── secrets
+└── users
 ```
 
 ## Appendix

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   home.file.".zsh/themes/kelszo.zsh-theme".source =
     ../dotfiles/kelszo.zsh-theme;
 
@@ -14,11 +14,4 @@
       plugins = [ "git" "docker" "sudo" ];
     };
   };
-
-  home.file.".config/ranger/rc.conf".text = ''
-    set preview_images true
-    set preview_images_method ueberzug
-  '';
-
-  programs.git.enable = true;
 }
