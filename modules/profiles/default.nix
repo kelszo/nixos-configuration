@@ -4,5 +4,6 @@
     ./dev.nix
     ./iphone.nix
     ./fonts.nix
+    ./latex.nix
   ];
 }

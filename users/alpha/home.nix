@@ -47,6 +47,7 @@ in
     dev.enable = true;
     iphone.enable = true;
     fonts.enable = true;
+    latex.enable = true;
   };
 
   # NOTE: This is needed for enviroment variables to be set by Home Manager.

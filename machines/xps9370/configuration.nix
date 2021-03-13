@@ -82,21 +82,21 @@
   };
 
   # bluetooth
-  # hardware = {
-  #   bluetooth = {
-  #     enable = true;
-  #     settings = { "General" = { "Enable" = "Source,Sink,Media,Socket"; }; };
-  #   };
+  hardware = {
+    bluetooth = {
+      enable = false;
+      # settings = { "General" = { "Enable" = "Source,Sink,Media,Socket"; }; };
+    };
 
-  #   pulseaudio = {
-  #     extraModules = [ pkgs.pulseaudio-modules-bt ];
-  #     zeroconf.discovery.enable = true;
-  #     extraConfig = ''
-  #       load-module module-dbus-protocol
-  #       load-module module-switch-on-connect
-  #     '';
-  #   };
-  # };
+    # pulseaudio = {
+    #   extraModules = [ pkgs.pulseaudio-modules-bt ];
+    #   zeroconf.discovery.enable = true;
+    #   extraConfig = ''
+    #     load-module module-dbus-protocol
+    #     load-module module-switch-on-connect
+    #   '';
+    # };
+  };
 
   # laptop
   services.xserver.libinput = {
