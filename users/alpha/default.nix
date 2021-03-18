@@ -12,7 +12,6 @@
     extraGroups =
       [ "wheel" "networkmanager" "docker" "sound" "video" "pulse" "audio" ];
   };
-  #home-manager.useGlobalPkgs = true;
 
   home-manager.users.alpha = import ./home.nix;
 

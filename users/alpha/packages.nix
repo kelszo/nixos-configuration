@@ -31,10 +31,14 @@
       bitwarden # password manager
       evolution # email and calendar client
       anki # flashcards
-      # slicer # 3d slicer for mri
       protonmail-bridge
       spotify
       deluge
+      winetricks
+      lutris
+
+      # medicine
+      # slicer # 3d slicer for mri
 
       # messaging
       discord

@@ -5,5 +5,6 @@
     ./iphone.nix
     ./fonts.nix
     ./latex.nix
+    ./gaming.nix
   ];
 }

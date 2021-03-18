@@ -21,3 +21,7 @@ Personal NixOS configuration
 
 - https://gist.github.com/ladinu/bfebdd90a5afd45dec811296016b2a3f
 - https://github.com/LEXUGE/nixos
+
+## TODO
+- fix autologin (black screen on start)
+- use `flake.nix`

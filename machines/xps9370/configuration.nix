@@ -20,6 +20,14 @@
     <nixos-hardware/dell/xps/13-9370>
   ];
 
+  home-manager.users.alpha.kelszo.profiles = {
+    photography.enable = true;
+    dev.enable = true;
+    iphone.enable = true;
+    fonts.enable = true;
+    latex.enable = true;
+  };
+
   # network
   networking = {
     hostName = "xps";
@@ -38,7 +46,6 @@
 
     networkmanager = {
       enable = true;
-      wifi.backend = "iwd";
     };
 
     wireguard = {

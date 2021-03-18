@@ -13,7 +13,6 @@ in
       let
         vcr = callPackage ../../packages/vcr.nix {};
         euclid = callPackage ../../packages/euclid.nix {};
-        # slicer = callPackage ../../packages/slicer.nix { };
         san-francisco = callPackage ../../packages/san-francisco.nix {};
       in
         [

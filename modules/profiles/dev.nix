@@ -14,9 +14,8 @@ in
       package = pkgs.vscodium;
     };
 
-    programs.git.enable = true;
-
     home.packages = with pkgs;[
+      git
       insomnia # http-request client
       docker-compose
       gitAndTools.gh # github client
