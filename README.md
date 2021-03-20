@@ -23,5 +23,7 @@ Personal NixOS configuration
 - https://github.com/LEXUGE/nixos
 
 ## TODO
+
 - fix autologin (black screen on start)
 - use `flake.nix`
+- Tile gnome (gTile, pop-os shell, tidalwm, paperWM)

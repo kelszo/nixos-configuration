@@ -25,16 +25,20 @@
     name = "Capitaine";
   };
 
-  home.packages = with pkgs; [
-    gnome3.gnome-tweaks
-    dconf2nix
-    gnome3.dconf-editor
-    gparted
-    xfsprogs
+  home.packages = with pkgs;
+    let
+      gtile = callPackage ../../packages/gtile.nix {};
+    in
+      [
+        gnome3.gnome-tweaks
+        dconf2nix
+        gnome3.dconf-editor
+        gparted
+        xfsprogs
 
-    gnomeExtensions.window-is-ready-remover
-    gnomeExtensions.sound-output-device-chooser
-    gnomeExtensions.emoji-selector
-  ];
-
+        gnomeExtensions.window-is-ready-remover
+        gnomeExtensions.sound-output-device-chooser
+        gnomeExtensions.emoji-selector
+        gtile
+      ];
 }
