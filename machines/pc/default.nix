@@ -16,12 +16,16 @@
     ./boot.nix
     ../../desktops/gnome
     ../../users/alpha
-
-    <nixos-hardware/common/cpu/intel>
-    <nixos-hardware/common/gpu/nvidia.nix>
-    <nixos-hardware/common/pc>
-    <nixos-hardware/common/pc/ssd>
   ];
+
+  home-manager.users.alpha.kelszo.profiles = {
+    photography.enable = true;
+    dev.enable = true;
+    iphone.enable = true;
+    fonts.enable = true;
+    latex.enable = true;
+    gaming.enable = true;
+  };
 
   # network
   networking = {
@@ -45,8 +49,11 @@
       enable = true;
     };
 
-    #wg-quick.interfaces.wg0 = import ../../secrets/integrity.nix;
+    wg-quick.interfaces.wg0 = import ../../secrets/integrity.nix;
   };
+
+  networking.wireless.enable = false;
+  hardware.bluetooth.enable = false;
 
   # sound
   sound = {
@@ -72,6 +79,7 @@
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
+      intel-media-driver
     ];
   };
 
@@ -131,14 +139,6 @@
         monospace = [ "SF Mono" ];
         sansSerif = [ "SF Pro Text" ];
       };
-    };
-  };
-
-  virtualisation = {
-    docker = {
-      enable = true;
-      autoPrune.enable = true;
-      enableOnBoot = false;
     };
   };
 
