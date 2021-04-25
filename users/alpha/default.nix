@@ -10,7 +10,7 @@
     description = "alpha";
     shell = pkgs.zsh;
     extraGroups =
-      [ "wheel" "networkmanager" "docker" "sound" "video" "pulse" "audio" ];
+      [ "wheel" "networkmanager" "docker" "sound" "video" "pulse" "audio" "kvm" "libvirtd" ];
   };
 
   home-manager.users.alpha = import ./home.nix;

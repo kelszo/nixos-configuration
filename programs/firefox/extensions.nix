@@ -16,10 +16,10 @@
   };
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "1.48.1";
+    version = "1.49.1";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3714988/bitwarden_free_password_manager-1.48.1-an+fx.xpi";
-    sha256 = "27088233b72c36f8636ae88e79d7e52a0b4480d7fc73ed6412233a2f95408256";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3745234/bitwarden_free_password_manager-1.49.1-an+fx.xpi";
+    sha256 = "7e534c18ad98171551bde96f3ed9b0a5424ce818f73355866b2fb0658a67d716";
     meta = with lib;
       {
         homepage = "https://bitwarden.com";
@@ -44,10 +44,10 @@
   };
   "clearurls" = buildFirefoxXpiAddon {
     pname = "clearurls";
-    version = "1.20.0";
+    version = "1.21.0";
     addonId = "{74145f27-f039-47ce-a470-a662b129930a}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3682334/clearurls-1.20.0-an+fx.xpi";
-    sha256 = "2d4bdd6c702999f2d76c97cbd6a0bb80cbdef4665c3c104b38824e9dc0616df2";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3748919/clearurls-1.21.0-an+fx.xpi";
+    sha256 = "eb0b199cd478b21bc1fab59be627603946d1474070aa4eb482c44d18c041d974";
     meta = with lib;
       {
         homepage = "https://clearurls.xyz/";
@@ -127,10 +127,10 @@
   };
   "google-container" = buildFirefoxXpiAddon {
     pname = "google-container";
-    version = "1.5.3";
+    version = "1.5.4";
     addonId = "@contain-google";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3691597/google_container-1.5.3-fx.xpi";
-    sha256 = "b92be6ae7d9a3814a16752453c845b1175e97a2314bdcef4d5a552ea8ecc4583";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3736912/google_container-1.5.4-fx.xpi";
+    sha256 = "47a7c0e85468332a0d949928d8b74376192cde4abaa14280002b3aca4ec814d0";
     meta = with lib;
       {
         homepage = "https://github.com/containers-everywhere/contain-google";
@@ -154,10 +154,10 @@
   };
   "https-everywhere" = buildFirefoxXpiAddon {
     pname = "https-everywhere";
-    version = "2021.1.27";
+    version = "2021.4.15";
     addonId = "https-everywhere@eff.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3716461/https_everywhere-2021.1.27-an+fx.xpi";
-    sha256 = "da049748bba7282c0f8c0ab85ac8f494e795e79d6bdc6f9f726d687aa8cc2a1f";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3760520/https_everywhere-2021.4.15-an+fx.xpi";
+    sha256 = "8f6342077515669f73ae377346da4447428544559c870678488fa5b6b63d2500";
     meta = with lib;
       {
         homepage = "https://www.eff.org/https-everywhere";
@@ -195,10 +195,10 @@
   };
   "skip-redirect" = buildFirefoxXpiAddon {
     pname = "skip-redirect";
-    version = "2.3.4";
+    version = "2.3.5";
     addonId = "skipredirect@sblask";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3632211/skip_redirect-2.3.4-an+fx.xpi";
-    sha256 = "bee434ea6410aca1321a20ed62a15b3b3c295d95eb4445b88adb0970652f1b3a";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3750630/skip_redirect-2.3.5-an+fx.xpi";
+    sha256 = "ed64848bbf986bc985690b2873161ad44c41726a859b8db60afe27d24fd9b747";
     meta = with lib;
       {
         description = "Some web pages use intermediary pages before redirecting to a final page. This add-on tries to extract the final url from the intermediary url and goes there straight away if successful.";
@@ -221,10 +221,10 @@
   };
   "tab-session-manager" = buildFirefoxXpiAddon {
     pname = "tab-session-manager";
-    version = "6.4.0";
+    version = "6.5.0";
     addonId = "Tab-Session-Manager@sienori";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3693191/tab_session_manager-6.4.0-fx.xpi";
-    sha256 = "10decc0b2e57d641afa58bf61a600e5448a17cca147e8c72c04a8867d8ab12c4";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3757745/tab_session_manager-6.5.0-fx.xpi";
+    sha256 = "39f239c50326a19a60f6a3868b8882cc0ae8e2b1230480f8ea5e891d12c2ef0b";
     meta = with lib;
       {
         homepage = "https://tab-session-manager.sienori.com/";
@@ -249,10 +249,10 @@
   };
   "tree-style-tab" = buildFirefoxXpiAddon {
     pname = "tree-style-tab";
-    version = "3.7.3";
+    version = "3.7.4";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3734736/tree_style_tab_-3.7.3-fx.xpi";
-    sha256 = "9b2bf3723115c6d389197afa374ac8294d95ca5e3e74a68dba5f365536cab9f6";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3752249/tree_style_tab_-3.7.4-fx.xpi";
+    sha256 = "9e7a9b1ea63c62511e915e301ec7c8f93fabb4551b908bbd4f8e719adf9336d6";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
@@ -262,10 +262,10 @@
   };
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.33.2";
+    version = "1.34.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3719054/ublock_origin-1.33.2-an+fx.xpi";
-    sha256 = "5c3a5ef6f5b5475895053238026360020d6793b05541d20032ea9dd1c9cae451";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3740966/ublock_origin-1.34.0-an+fx.xpi";
+    sha256 = "96783b4e9abed66af81a30f7dbb6560911a9d828b12aadf0ec88b181200c3bfe";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";

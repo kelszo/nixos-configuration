@@ -27,7 +27,7 @@
 
   home.packages = with pkgs;
     let
-      gtile = callPackage ../../packages/gtile.nix {};
+      wintile = callPackage ../../packages/wintile.nix {};
     in
       [
         gnome3.gnome-tweaks
@@ -39,6 +39,6 @@
         gnomeExtensions.window-is-ready-remover
         gnomeExtensions.sound-output-device-chooser
         gnomeExtensions.emoji-selector
-        gtile
+        wintile
       ];
 }

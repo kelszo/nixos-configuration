@@ -26,6 +26,7 @@
     iphone.enable = true;
     fonts.enable = true;
     latex.enable = true;
+    windows.enable = true;
   };
 
   # network
@@ -196,6 +197,10 @@
       enable = true;
       autoPrune.enable = true;
       enableOnBoot = false;
+    };
+
+    libvirtd = {
+      enable = true;
     };
   };
 

@@ -6,5 +6,6 @@
     ./fonts.nix
     ./latex.nix
     ./gaming.nix
+    ./windows.nix
   ];
 }

@@ -25,7 +25,7 @@
   environment.gnome3.excludePackages = with pkgs.gnome3; [
     # baobab
     eog
-    epiphany # web-browser
+    # epiphany # web-browser
     gedit
     gnome-font-viewer
     # pkgs.gnome-connections
