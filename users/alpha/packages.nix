@@ -36,7 +36,6 @@
         evolution # email and calendar client
         anki # flashcards
         protonmail-bridge
-        spotify
         deluge
         winetricks
         lutris
@@ -46,12 +45,16 @@
         slicer # 3d slicer for dicom
 
         # messaging
-        discord
-        slack
         element-desktop
         signal-desktop
+
+        # DO NOT TRUST
+        # TODO: sandbox
+        discord
+        slack
         zoom-us
         teams
+        spotify
 
         # Spelling
         hunspell
