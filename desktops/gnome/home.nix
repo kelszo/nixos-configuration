@@ -2,7 +2,7 @@
 
   # dconf dump / > dconf.settings
   # dconf2nix -i dconf.settings -o dconf.nix
-  imports = [ ./dconf.nix ];
+  # imports = [ ./dconf.nix ];
 
   gtk = {
     enable = true;
@@ -25,9 +25,11 @@
     name = "Capitaine";
   };
 
+  services.gnome-keyring.enable = true;
+
   home.packages = with pkgs;
     let
-      wintile = callPackage ../../packages/wintile.nix {};
+      minimalism-gnome-shell = callPackage ../../packages/minimalism-gnome-shell.nix {};
     in
       [
         gnome3.gnome-tweaks
@@ -36,9 +38,14 @@
         gparted
         xfsprogs
 
+        minimalism-gnome-shell
         gnomeExtensions.window-is-ready-remover
         gnomeExtensions.sound-output-device-chooser
-        gnomeExtensions.emoji-selector
-        wintile
+        gnomeExtensions.mpris-indicator-button
+        gnomeExtensions.impatience
+        gnomeExtensions.material-shell
+
+        roboto
+        roboto-mono
       ];
 }

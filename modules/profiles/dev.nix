@@ -20,19 +20,26 @@ in
       github-desktop = callPackage ../../packages/github-desktop.nix {};
     in
       [
+        # general
+        gcc
         git
         github-desktop
         insomnia # http-request client
-        docker-compose
+        podman-compose
         gitAndTools.gh # github client
         robo3t # mongodb manager
         dbeaver # sql manager
         postgresql
+
+        # node
         nodejs
         yarn
         nodePackages.npm-check-updates
+
+        # python
         python39Full
-        gcc
+        python39Packages.jupyter
+        python39Packages.pylint
       ];
   };
 }

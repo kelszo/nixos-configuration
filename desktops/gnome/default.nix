@@ -5,15 +5,13 @@
       layout = "us";
       xkbVariant = "altgr-intl";
       xautolock.time = 120;
-      displayManager = {
-        gdm = {
-          enable = true;
-          wayland = true;
-        };
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
       };
 
-      desktopManager = {
-        gnome3 = { enable = true; };
+      desktopManager.gnome = {
+        enable = true;
       };
     };
 
@@ -22,7 +20,7 @@
   };
 
 
-  environment.gnome3.excludePackages = with pkgs.gnome3; [
+  environment.gnome.excludePackages = with pkgs.gnome3; [
     # baobab
     eog
     # epiphany # web-browser

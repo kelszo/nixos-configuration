@@ -1,11 +1,15 @@
 { ... }: {
   imports = [
-    ./photography.nix
+    ./common.nix
     ./dev.nix
-    ./iphone.nix
     ./fonts.nix
-    ./latex.nix
     ./gaming.nix
+    ./iphone.nix
+    ./latex.nix
+    ./media.nix
+    ./messaging.nix
+    ./office.nix
+    ./photography.nix
     ./windows.nix
   ];
 }

@@ -1,11 +1,6 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
-  nix.extraOptions = ''
-    binary-caches-parallel-connections = 3
-    connect-timeout = 5
-  '';
-
   nixpkgs.config = {
     allowUnfree = true;
     pulseaudio = true;
@@ -21,11 +16,15 @@
   ];
 
   home-manager.users.alpha.kelszo.profiles = {
-    photography.enable = true;
+    common.enable = true;
     dev.enable = true;
-    iphone.enable = true;
     fonts.enable = true;
+    iphone.enable = true;
     latex.enable = true;
+    media.enable = true;
+    messaging.enable = true;
+    office.enable = true;
+    photography.enable = true;
     windows.enable = true;
   };
 
@@ -122,7 +121,7 @@
   # power saving
   services = {
     tlp = {
-      enable = true;
+      enable = lib.mkForce false;
       settings = {
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
@@ -193,10 +192,9 @@
   };
 
   virtualisation = {
-    docker = {
+    podman = {
       enable = true;
-      autoPrune.enable = true;
-      enableOnBoot = false;
+      dockerCompat = true;
     };
 
     libvirtd = {
@@ -221,7 +219,7 @@
   nix = {
     optimise.automatic = true;
     autoOptimiseStore = true;
-    gc.automatic = false;
+    gc.automatic = true;
   };
 
   system.autoUpgrade = {

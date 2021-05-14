@@ -26,4 +26,5 @@ Personal NixOS configuration
 
 - fix autologin (black screen on start)
 - use `flake.nix`
-- Tile gnome (gTile, pop-os shell, tidalwm, paperWM)
+- Update gnome extensions (material-shell, minimalism-gnome-shell, sound-output-device-chooser)
+- Fix plata theme
