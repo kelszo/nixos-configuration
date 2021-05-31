@@ -9,11 +9,12 @@ in
   };
 
   config = mkIf cfg.enable {
+    services.dropbox = { enable = true; path = "${config.home.homeDirectory}/Documents/Dropbox"; };
+
     home.packages = with pkgs;[
       libreoffice # office suite
       xournal # pdf-editor
       zettlr # knowledge-bank
-      joplin-desktop # note taking
       calibre # e-book management
       zotero # bibliographic manager
       pinta # image editor

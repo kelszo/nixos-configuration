@@ -1,7 +1,6 @@
 { pkgs, fetchurl, stdenv, ... }: {
   programs.firefox = {
     enable = true;
-    enableGnomeExtensions = true;
     package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
       forceWayland = true;
       extraPolicies = {

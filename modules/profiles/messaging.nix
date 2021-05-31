@@ -13,6 +13,8 @@ in
       element-desktop
       signal-desktop
 
+      ferdi
+
       # DO NOT TRUST
       # TODO: sandbox
       discord

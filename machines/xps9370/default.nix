@@ -61,12 +61,6 @@
     mediaKeys.enable = true;
   };
 
-  hardware.pulseaudio = {
-    enable = true;
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
-  };
-
   services.pipewire = {
     enable = true;
   };
@@ -91,18 +85,21 @@
   # bluetooth
   hardware = {
     bluetooth = {
-      enable = false;
-      # settings = { "General" = { "Enable" = "Source,Sink,Media,Socket"; }; };
+      enable = true;
+      settings = { "General" = { "Enable" = "Source,Sink,Media,Socket"; }; };
     };
 
-    # pulseaudio = {
-    #   extraModules = [ pkgs.pulseaudio-modules-bt ];
-    #   zeroconf.discovery.enable = true;
-    #   extraConfig = ''
-    #     load-module module-dbus-protocol
-    #     load-module module-switch-on-connect
-    #   '';
-    # };
+    pulseaudio = {
+      enable = true;
+      package = pkgs.pulseaudioFull;
+      support32Bit = true;
+      extraModules = [ pkgs.pulseaudio-modules-bt ];
+      zeroconf.discovery.enable = true;
+      extraConfig = ''
+        load-module module-dbus-protocol
+        load-module module-switch-on-connect
+      '';
+    };
   };
 
   # laptop
@@ -217,9 +214,12 @@
   '';
 
   nix = {
-    optimise.automatic = true;
+    optimise = { automatic = true; dates = [ "weekly" ]; };
     autoOptimiseStore = true;
-    gc.automatic = true;
+    gc = { automatic = true; dates = "weekly"; options = "-d --delete-older-than 7d"; };
+    extraOptions = ''
+      min-free = ${toString (1024 * 1024 * 1024 * 16)}
+    '';
   };
 
   system.autoUpgrade = {

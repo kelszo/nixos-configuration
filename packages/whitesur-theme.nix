@@ -14,7 +14,7 @@ let
   opacity = "";
   alt = "";
   icon = "";
-  nix-snowflake = ../assets/nix-snowflake.svg;
+  nix-snowflake = ../assets/nixos.svg;
 in
 stdenv.mkDerivation rec {
   version = "2020-12-03.01";

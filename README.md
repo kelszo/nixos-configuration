@@ -28,3 +28,5 @@ Personal NixOS configuration
 - use `flake.nix`
 - Update gnome extensions (material-shell, minimalism-gnome-shell, sound-output-device-chooser)
 - Fix plata theme
+- Sandbox proprietary software (spotify, zoom, discord, slack, teams)
+- Safer firefox
